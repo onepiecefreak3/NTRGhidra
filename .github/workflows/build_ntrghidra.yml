@@ -14,18 +14,18 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
-        java-version: ${{vars.JDK_VERSION}}
+        java-version: "17"
         distribution: 'temurin' # Eclipse JDK
         server-id: github
         settings-path: ${{ github.workspace }}
     - name: Setup Gradle
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
-        gradle-version: ${{env.GRADLE_VERSION}}
+        gradle-version: "9.1.0"
     - name: Setup Ghidra
       uses: er28-0652/setup-ghidra@master
       with:
-        version: ${{vars.GHIDRA_BUILD_VERSION}}
+        version: "10.4"
     - name: Build
       run: "gradle"
     - name: Release
