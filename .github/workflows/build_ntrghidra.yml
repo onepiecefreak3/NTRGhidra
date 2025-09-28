@@ -25,7 +25,7 @@ jobs:
     - name: Setup Ghidra
       uses: er28-0652/setup-ghidra@master
       with:
-        version: "10.4"
+        version: "11.3.2"
     - name: Build
       run: "gradle"
     - name: Release
